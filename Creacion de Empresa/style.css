@@ -1,0 +1,421 @@
+        /* Paleta de colores oficial del proyecto[cite: 1] */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --apple-gray: #f5f5f7;
+            --dark-gray: #1d1d1f;
+            --border-gray: #d2d2d7;
+            --blue-accent: #0066cc;
+            --gold-accent: #bf4800;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --transition-apple: all 0.4s cubic-bezier(0.25, 0.1, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- Navegación Apple refinada ----- */
+        nav {
+            height: 52px;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px) saturate(180%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+            padding: 0 5%;
+            transition: background 0.2s;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.35rem;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #000 0%, #2c2c2e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition-apple);
+            letter-spacing: -0.2px;
+        }
+
+        nav a:hover {
+            color: var(--black);
+            opacity: 1;
+        }
+
+        .btn-nav {
+            background-color: var(--black);
+            color: var(--white) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 980px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-nav:hover {
+            background-color: #2c2c2e;
+            transform: scale(0.98);
+            color: white;
+        }
+
+        /* Secciones offset por el header fijo */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* Hero section renovada (Apple elegance) */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 110px;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            display: inline-block;
+            letter-spacing: 0.3px;
+            background: rgba(191, 72, 0, 0.05);
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+            color: var(--black);
+        }
+
+        .hero h1 span {
+            color: #86868b;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            color: #6e6e73;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-black {
+            background: var(--black);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition-apple);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-black:hover {
+            background: #1d1d1f;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-link {
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-link i {
+            transition: transform 0.2s;
+        }
+
+        .btn-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Sección genérica estilo Apple */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 1.25rem;
+            max-width: 680px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Cards base estilo Apple */
+        .card-modern {
+            border-radius: 28px;
+            transition: var(--transition-apple);
+            padding: 2rem 1.8rem;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            border: 0.5px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .card-modern:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Sección de diferencial (se mantienen los colores originales) */
+        .card.dark {
+            background: var(--dark-gray);
+            color: var(--white);
+            border-radius: 28px;
+        }
+
+        .card.gray {
+            background: var(--apple-gray);
+            color: var(--black);
+            border-radius: 28px;
+        }
+
+        .card.white {
+            border: 1px solid var(--border-gray);
+            background: var(--white);
+            border-radius: 28px;
+        }
+
+        /* segmentos - estilo mosaico */
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .segment-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--apple-gray);
+            border-radius: 32px;
+            transition: var(--transition-apple);
+        }
+
+        .segment-card i {
+            font-size: 2.4rem;
+            background: var(--black);
+            background: linear-gradient(135deg, #1d1d1f, #3a3a3e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
+
+        .segment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .segment-card p {
+            color: #4b4b50;
+            font-size: 0.95rem;
+        }
+
+        /* productos destacados */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .product-item {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            border: 1px solid var(--border-gray);
+            transition: all 0.3s;
+        }
+
+        .product-item i {
+            font-size: 2.8rem;
+            color: #1d1d1f;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .product-item .price {
+            font-size: 0.9rem;
+            color: #86868b;
+            margin: 0.5rem 0;
+        }
+
+        .product-item .tag {
+            font-size: 0.7rem;
+            background: var(--apple-gray);
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        /* talleres */
+        .workshop-card {
+            display: flex;
+            background: var(--apple-gray);
+            border-radius: 28px;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .workshop-info h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--dark-gray);
+            background: transparent;
+            padding: 0.5rem 1.5rem;
+            border-radius: 980px;
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+            border-color: var(--black);
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: var(--apple-gray);
+            border-radius: 48px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-final h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* footer refinado */
+        footer {
+            padding: 3rem 0 2rem;
+            background: var(--apple-gray);
+            border-top: 1px solid var(--border-gray);
+            color: #86868b;
+            font-size: 0.8rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .copyright {
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 70px;
+            }
+            .workshop-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
